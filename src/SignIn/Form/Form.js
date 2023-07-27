@@ -38,7 +38,7 @@ export default function Form ({passwordEye, setPasswordEye, loginClick, openClic
                     <a href="#" onClick={forgatPasswordOpen}>Forgot Password?</a>
                     <a href="#" onClick={openClick}>Register!</a>
                 </div>
-                <button type="submit">Join</button>
+                <button type="submit">Join</button> 
             </form>}
         </div>
     )
