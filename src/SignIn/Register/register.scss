@@ -1,0 +1,59 @@
+.background{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(36, 33, 33);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.register{
+    width: 30%;
+    height: auto;
+    border: 1px solid black;
+    background-color: purple;
+    padding-bottom: 70px;
+    form{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    label{
+        text-align: left;
+        display: block;
+        color: red;
+    }
+    input{
+        width: 100%;
+        height: 30px;
+        outline: none;
+        border: 2px solid rgb(66, 6, 112);
+        display: block;
+        margin-top: 5px;
+    }
+    h2{
+        width: 100%;
+        display: block;
+    }
+    button{
+        margin-top: 20px;
+         width: 100%;
+            height: 40px;
+            outline: none;
+            border: 2px solid rgb(66, 6, 112);
+            margin-top: 20px;
+    }
+}
+.snakeBar{
+    width: 30%;
+    height: 150px;
+    svg{
+        color: rgb(9, 191, 15);
+    }
+    span{
+        word-spacing: 5px;
+        font-weight: bold;
+    }
+}

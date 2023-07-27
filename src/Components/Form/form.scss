@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form{
+    width: 80%;
+    height: auto;
+    border: 1px solid rgb(60, 3, 116);
+    border-radius: 10px;
+    div{
+        position: relative;
+    }
+    input{
+        width: 80%;
+        height: 30px;
+        margin: 10px 0;
+        border: 1px solid rgb(60, 3, 116);
+        outline: none;
+        border-radius: 5px;
+    }
+    svg{
+        position: absolute;
+        top: 15px;
+        right: 5%;
+        color: red;
+    }
+    button{
+        width: 100px;
+        height: 30px;
+        margin-bottom: 10px;
+        border-radius: 30px;
+        border: 2px solid rgb(60, 3, 116);
+        font-weight: bold;
+        color: rgb(60, 3, 116);
+    }
+}

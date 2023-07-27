@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.editForm{
+    width: 80%;
+    height: auto;
+    border: 1px solid rgb(60, 3, 116);
+    border-radius: 15px;
+    position: absolute;
+    background-color: rgb(175, 171, 175);
+    top: 10%;
+    left: 10%;
+    .close{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    form{
+        padding-bottom: 20px;
+    }
+    input{
+        width: 80%;
+        height: 30px;
+        outline: none;
+        margin-top: 20px;
+        border: 1px solid rgb(60, 3, 116);
+        border-radius: 5px;
+    }
+    button{
+        width: 100px;
+        height: 30px;
+        border: 2px solid rgb(60, 3, 116);
+        border-radius: 30px;
+        margin-top: 20px;
+        font-weight: bold;
+        color: rgb(60, 3, 116);
+    }
+    svg{
+        color: rgb(60, 3, 116);
+    }
+}
