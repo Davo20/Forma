@@ -1,8 +1,10 @@
 import React from "react";
 import "./register.scss"
 import {FcGoogle} from "react-icons/fc"
-import {AiOutlineCheckCircle} from "react-icons/ai"
+import {AiOutlineCheckCircle, AiOutlineUserAdd} from "react-icons/ai"
 import {VscEyeClosed, VscEye} from "react-icons/vsc"
+import {MdOutlineAlternateEmail, MdOutlineLock} from "react-icons/md"
+import {BsTelephone} from "react-icons/bs"
 
 export default function Register({valid, passwordChange, registerClick, open, registerCloseClick, snakeBar, eror, passwordEye, setPasswordEye, passwordRegEye, setPasswordRegEye}){
     
@@ -13,55 +15,63 @@ export default function Register({valid, passwordChange, registerClick, open, re
         {open && <div className="background">
 
          <div className="register">
-            <h2>Register</h2>
             <form action="#" onSubmit={registerClick}>
-                <div>
-                    <input type="text" name="name" id="name"></input>
-                    {eror.name && <label for="name">{eror.name}</label>}
+            <h2>Sign Up</h2>
+                <label>Full Name</label>
+                <div className="inputCont">
+                    <AiOutlineUserAdd></AiOutlineUserAdd>
+                    <input type="text" name="name" id="name"></input>             
                 </div>
-                <div>
+                {eror.name && <p>{eror.name}</p>}
+                <label>Email</label>
+                <div className="inputCont">
+                    <MdOutlineAlternateEmail></MdOutlineAlternateEmail>
                     <input type="email" name="email" id="email"></input>
-                    {eror.email && <label for="email">{eror.email}</label>}
                 </div>
-                <div>
+                {eror.email && <p>{eror.email}</p>}
+                <label>Phone Number</label>
+                <div className="inputCont"> 
+                    <BsTelephone></BsTelephone>
                     <input type="tel" name="phoneNumber" id="phoneNumber"></input>
-                    {eror.phoneNumber && <label for="phoneNumber">{eror.phoneNumber}</label>}
                 </div>
-                <div>
+                {eror.phoneNumber && <p>{eror.phoneNumber}</p>}
+                <label>Birth date</label>
+                <div className="inputContB">
                     <input type="date" name="birthDate" id="birthDate"></input>
-                    {eror.birthDate && <label for="birthDate">{eror.birthDate}</label>}
                 </div>
-                <div style={{position: "relative"}}>
+                {eror.birthDate && <p>{eror.birthDate}</p>}
+                <label>Password</label>
+                <div className="inputContP">
+                    <MdOutlineLock></MdOutlineLock>
                     <input type={passwordEye} name="password" id="password" value={valid} onChange={passwordChange}></input>
                     {passwordEye == "password" ? (
                         <span onClick={()=>{setPasswordEye("text")}}>
-                            <VscEyeClosed style={{position: "absolute", top: "12%", right: "2%"}}></VscEyeClosed>
+                            <VscEyeClosed className="passwordWatch"></VscEyeClosed>
                         </span>
                     ):(
                         <span onClick={()=>setPasswordEye("password")}>
-                            <VscEye style={{position: "absolute", top: "12%", right: "2%"}}></VscEye>
+                            <VscEye className="passwordWatch"></VscEye>
                         </span>
                     )}
-                    {eror.password && <label for="password">{eror.password}</label>}
                 </div>
-                <div style={{position: "relative"}}>
+                {eror.password && <p>{eror.password}</p>}
+                <label>Reset password</label>
+                <div className="inputContP">
+                    <MdOutlineLock></MdOutlineLock>
                     <input type={passwordRegEye} name="resetPassword" id="password"></input>
                     {passwordRegEye == "password" ? (
                         <span onClick={()=>{setPasswordRegEye("text")}}>
-                            <VscEyeClosed style={{position: "absolute", top: "12%", right: "2%"}}></VscEyeClosed>
+                            <VscEyeClosed className="passwordWatch"></VscEyeClosed>
                         </span>
                     ):(
                         <span onClick={()=>setPasswordRegEye("password")}>
-                            <VscEye style={{position: "absolute", top: "12%", right: "2%"}}></VscEye>
+                            <VscEye className="passwordWatch"></VscEye>
                         </span>
                     )}
-                    {eror.resetPassword && <label for="password">{eror.resetPassword}</label>}
                 </div>
-                <div>
-                    <button><FcGoogle></FcGoogle>Log In With Google</button>
-                </div>
+                {eror.resetPassword && <p>{eror.resetPassword}</p>}
                 <button type="submit">Register</button>
-                <a href="#" onClick={registerCloseClick}>Back to Log In</a>
+                <a href="#" className="back" onClick={registerCloseClick}>Back to Log In</a>
             </form>
         </div>
         {snakeBar && <div className="snakeBar">

@@ -1,0 +1,53 @@
+.forgatPNumber{
+    width: 100%;
+    padding: 30px;
+    input{
+        width: 90%;
+        height: 30px;
+        outline: none;
+        border: 1px solid black;
+        margin-top: 15px;
+    }
+    button{
+        margin: 15px auto;
+        width: 40%;
+        outline: none;
+        background-color: #357EC7;
+        height: 30px;
+        border: none;
+        cursor: pointer;
+    }
+    .conf{
+        width: 100%;
+    }
+    .btNext{
+        display: block;
+    }
+    .btOk, .btNo{
+        margin: 10px;
+    }
+}
+.newPassword{
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    form{
+        width: 100%;
+        input{
+            display: block;
+            margin: 10px auto;
+            width: 90%;
+            height: 30px;
+            outline: none;
+            border: 1px solid black;
+        }
+        button{
+            width: 40%;
+            outline: none;
+            background-color: #357EC7;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}

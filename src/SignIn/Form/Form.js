@@ -8,9 +8,9 @@ import {MdOutlineAlternateEmail, MdOutlineLock} from "react-icons/md"
 export default function Form ({passwordEye, setPasswordEye, loginClick, openClick, forgatPasswordOpen, log, erorLogin, loginRef, passwordRef}){
     return(
         <div className="form">
-            <h2>Sign In</h2>
-            <img src={userImg}></img>
             {log && <form action="#" onSubmit={loginClick}>
+            <h2 className="siginName">Sign In</h2>
+            <img src={userImg}></img>
                 <div>
                     <div className="logEmail">
                         <MdOutlineAlternateEmail className="emailIcon"></MdOutlineAlternateEmail>
