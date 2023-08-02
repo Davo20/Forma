@@ -1,6 +1,8 @@
+
 .forgatPNumber{
-    width: 100%;
+    width: 450px;
     padding: 30px;
+    background-color: white;
     input{
         width: 90%;
         height: 30px;
@@ -28,19 +30,12 @@
     }
 }
 .newPassword{
-    width: 100%;
+    width: 450px;
     height: auto;
     padding: 30px;
+    background-color: white;
     form{
         width: 100%;
-        input{
-            display: block;
-            margin: 10px auto;
-            width: 90%;
-            height: 30px;
-            outline: none;
-            border: 1px solid black;
-        }
         button{
             width: 40%;
             outline: none;
@@ -48,6 +43,30 @@
             height: 30px;
             border: none;
             cursor: pointer;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            input{
+                display: block;
+                margin: 10px 0;
+                width: 90%;
+                height: 30px;
+                outline: none;
+                border: 1px solid black;
+                border-right: none;
+            }
+            span{
+                display: flex;
+                align-items: center;
+            }
+            svg{
+                width: 20px;
+                height: 30px;
+                border: 1px solid black;
+                border-left: none;
+                padding: 0 2px;
+            }
         }
     }
 }

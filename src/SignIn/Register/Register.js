@@ -6,7 +6,7 @@ import {VscEyeClosed, VscEye} from "react-icons/vsc"
 import {MdOutlineAlternateEmail, MdOutlineLock} from "react-icons/md"
 import {BsTelephone} from "react-icons/bs"
 
-export default function Register({valid, passwordChange, registerClick, open, registerCloseClick, snakeBar, eror, passwordEye, setPasswordEye, passwordRegEye, setPasswordRegEye}){
+export default function Register({registerChange, valid, passwordChange, registerClick, open, registerCloseClick, snakeBar, eror, passwordEye, setPasswordEye, passwordRegEye, setPasswordRegEye, formRegisterValuesN, formRegisterValuesE, formRegisterValuesPN, formRegisterValuesB, formRegisterValuesP, formRegisterValuesRP, registerErrorsN, registerErrorsE, registerErrorsPN, registerErrorsB, registerErrorsP, registerErrorsRP}){
     
 
     return(
@@ -20,30 +20,30 @@ export default function Register({valid, passwordChange, registerClick, open, re
                 <label>Full Name</label>
                 <div className="inputCont">
                     <AiOutlineUserAdd></AiOutlineUserAdd>
-                    <input type="text" name="name" id="name"></input>             
+                    <input type="text" name="fullName" id="name" onChange={registerChange} value={formRegisterValuesN}></input>             
                 </div>
-                {eror.name && <p>{eror.name}</p>}
+                <p>{registerErrorsN}</p>
                 <label>Email</label>
                 <div className="inputCont">
                     <MdOutlineAlternateEmail></MdOutlineAlternateEmail>
-                    <input type="email" name="email" id="email"></input>
+                    <input type="email" name="email" id="email" onChange={registerChange} value={formRegisterValuesE}></input>
                 </div>
-                {eror.email && <p>{eror.email}</p>}
+                <p>{registerErrorsE}</p>
                 <label>Phone Number</label>
                 <div className="inputCont"> 
                     <BsTelephone></BsTelephone>
-                    <input type="tel" name="phoneNumber" id="phoneNumber"></input>
+                    <input type="tel" name="phoneNumber" id="phoneNumber" onChange={registerChange} value={formRegisterValuesPN}></input>
                 </div>
-                {eror.phoneNumber && <p>{eror.phoneNumber}</p>}
+                <p>{registerErrorsPN}</p>
                 <label>Birth date</label>
                 <div className="inputContB">
-                    <input type="date" name="birthDate" id="birthDate"></input>
+                    <input type="date" name="birthDate" id="birthDate" onChange={registerChange} value={formRegisterValuesB}></input>
                 </div>
-                {eror.birthDate && <p>{eror.birthDate}</p>}
+                <p>{registerErrorsB}</p>
                 <label>Password</label>
                 <div className="inputContP">
                     <MdOutlineLock></MdOutlineLock>
-                    <input type={passwordEye} name="password" id="password" value={valid} onChange={passwordChange}></input>
+                    <input type={passwordEye} name="password" id="password" value={formRegisterValuesP} onChange={registerChange} ></input>
                     {passwordEye == "password" ? (
                         <span onClick={()=>{setPasswordEye("text")}}>
                             <VscEyeClosed className="passwordWatch"></VscEyeClosed>
@@ -54,11 +54,11 @@ export default function Register({valid, passwordChange, registerClick, open, re
                         </span>
                     )}
                 </div>
-                {eror.password && <p>{eror.password}</p>}
+                <p>{registerErrorsP}</p>
                 <label>Reset password</label>
                 <div className="inputContP">
                     <MdOutlineLock></MdOutlineLock>
-                    <input type={passwordRegEye} name="resetPassword" id="password"></input>
+                    <input type={passwordRegEye} name="resetPassword" id="password" onChange={registerChange} value={formRegisterValuesRP}></input>
                     {passwordRegEye == "password" ? (
                         <span onClick={()=>{setPasswordRegEye("text")}}>
                             <VscEyeClosed className="passwordWatch"></VscEyeClosed>
@@ -69,7 +69,7 @@ export default function Register({valid, passwordChange, registerClick, open, re
                         </span>
                     )}
                 </div>
-                {eror.resetPassword && <p>{eror.resetPassword}</p>}
+                <p>{registerErrorsRP}</p>
                 <button type="submit">Register</button>
                 <a href="#" className="back" onClick={registerCloseClick}>Back to Log In</a>
             </form>

@@ -4,12 +4,14 @@
     box-sizing: border-box;
 }
 .form{
-    width: 70%;
+    width: 100%;
     height: auto;
-    margin: 0 auto;
+    background-color: white;
     form{
-        width: 100%;
-        padding-bottom: 50px;
+        width: 70%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+        padding-top: 20px;
         .eyePassword, .logEmail{
             display: flex;
             svg{
@@ -80,7 +82,16 @@
 }
 @media only screen and (max-width: 550px) {
     .form{
-        width: 90%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        form{
+            width: 90%;
+            img{
+                width: 40%;
+            }
+        }
         svg, input, button{
             height: 50px;
         }

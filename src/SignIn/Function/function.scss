@@ -7,11 +7,15 @@ body{
     background-color: #C9C0BB;
 }
 .headForm{
-    width: 30%;
-    height: auto;
-    background-color: white;
+    max-width: 2000px;
+    width: 100%;
+    height: 100vh;
+    // background-color: white;
     // margin: 50px auto;
     // position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     .signinName{
         padding-top: 50px;
     }
@@ -80,15 +84,3 @@ body{
         }
     }
 }
-@media only screen and (max-width: 550px) {
-    .headForm{
-        width: 100%;
-        height: 100vh;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        img{
-            width: 40%;
-        }
-    }
-  }

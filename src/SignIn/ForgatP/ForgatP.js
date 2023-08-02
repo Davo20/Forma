@@ -1,13 +1,14 @@
-import React from "react";
-import "./forgatp.scss"
+import React, { useState } from "react";
+import "./forgatp.scss";
+import {VscEyeClosed, VscEye} from "react-icons/vsc";
 
-export default function ForgatP ({forgatOpen, forgatPassword, confirm, conf, okClick, newPassword, setConfirmOpen, confirmClick, passwordModify, confirmRef}){
+export default function ForgatP ({pNewEye, pNewRegEye, setPNewEye, setNewPEye, forgatOpen, forgatPassword, confirm, conf, okClick, newPassword, setConfirmOpen, confirmClick, handleChange, confirmRef, formValuesP, formValuesPR, newPasswordErrorsP, newPasswordErrorsR}){
     return(
-        <div>
+        <div className="jj">
             {forgatOpen && <div className="forgatPNumber">
                 <h2>Change Password</h2>
                 <form action="#" onSubmit={forgatPassword}>
-                    <input type="tel" name="phone" placeholder="Phone Number"></input>
+                    <input type="tel" name="phone" placeholder="Phone Number" onChange={handleChange}></input>
                     <button type="submit" className="btNext">Next</button>
                 </form>
             {conf && <div className="conf">
@@ -19,10 +20,32 @@ export default function ForgatP ({forgatOpen, forgatPassword, confirm, conf, okC
             {newPassword && <div className="newPassword">
                 <h3>New Password</h3>
                 <form action="#" onSubmit={confirmClick}>
-                    <input type="paswword" name="password" placeholder="Password" ref={confirmRef}></input>
-                    {passwordModify.name && <p>{passwordModify.name}</p>}
-                    <input type="paswword" name="password" placeholder="Reset Password"></input>
-                    {passwordModify.secondName && <label>{passwordModify.secondName}</label>}
+                    <div>
+                        <input type={pNewEye} name="password" placeholder="Password" ref={confirmRef} value={formValuesP} onChange={handleChange}></input>
+                        {pNewEye == "password" ? (
+                            <span onClick={()=>setPNewEye("text")}>
+                                <VscEyeClosed className="eyeClosed"></VscEyeClosed>
+                            </span>
+                        ):(
+                            <span onClick={()=>setPNewEye("password")}>
+                                <VscEye className="eyeOpen"></VscEye>
+                            </span>
+                        )}
+                    </div>
+                    <p>{newPasswordErrorsP}</p>
+                    <div>
+                        <input type={pNewRegEye} name="resetPassword" placeholder="Reset Password" value={formValuesPR} onChange={handleChange}></input>
+                        {pNewRegEye == "password" ? (
+                            <span onClick={()=>setNewPEye("text")}>
+                                <VscEyeClosed className="eyeClosed"></VscEyeClosed>
+                            </span>
+                        ):(
+                            <span onClick={()=>setNewPEye("password")}>
+                                <VscEye className="eyeOpen"></VscEye>
+                            </span>
+                        )}
+                    </div>
+                    <p>{newPasswordErrorsR}</p>
                     <button type="submit">Confirm</button>
                 </form>
             </div>}
