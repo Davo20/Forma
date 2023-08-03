@@ -58,6 +58,7 @@ export default function Function (){
     const [pNewEye, setPNewEye] = useState("password")
     const [pNewRegEye, setNewPEye] = useState("password")
     const [user, setUser] = useState(false)
+    const [loader, setLoader] = useState(false)
 
     const registerChange = (e) =>{
         const {name, value}=e.target
@@ -85,6 +86,7 @@ export default function Function (){
             resetPassword: values.resetPassword
         }]
 
+        
         if(values.fullName === ""){
             errors.fullName = "Enter your full name"
         }
@@ -122,15 +124,20 @@ export default function Function (){
         }
 
             if(values.fullName != "" && values.email != "" && values.phoneNumber != "" && values.birthDate != "" && values.password != "" && values.resetPassword != "" && validPassword.test(values.password) && strLength.test(values.password) && emailValid.test(values.email) && values.resetPassword === values.password){
-                setSnakeBar(true)
-                localStorage.setItem("id", +localStorage.getItem("id")+1) 
-    
-                localStorage.setItem("user", JSON.stringify([...JSON.parse(localStorage.getItem("user")),...arrRegister]))
-                setRegister(JSON.parse(localStorage.getItem("user")))
+                setLoader(true)
+                setTimeout(()=>{
+                    setLoader(false)
+                    
+                    setOpen(!open)
+                    localStorage.setItem("id", +localStorage.getItem("id")+1) 
+                    
+                    localStorage.setItem("user", JSON.stringify([...JSON.parse(localStorage.getItem("user")),...arrRegister]))
+                    setRegister(JSON.parse(localStorage.getItem("user")))
+                }, 3000)
             }
-            else{
-                setSnakeBar(false)
-            }
+            // else{
+            //     setSnakeBar(false)
+            // }
            
         return errors
     }
@@ -259,7 +266,7 @@ export default function Function (){
             <Form  passwordEye={passwordEye} setPasswordEye={setPasswordEye} loginRef = {loginRef} passwordRef = {passwordRef} erorLogin = {erorLogin} loginClick={loginClick} openClick={registerOpenClick} forgatPasswordOpen={forgatPasswordOpen} log={log} loginChange={loginChange} loginFormValueE={loginFormValue.email} loginFormValueP = {loginFormValue.password} loginFormErrorE={loginFormError.email} loginFormErrorP = {loginFormError.password} loginFormErrorEr = {loginFormError.errorInput}></Form>
             <Login  loginFalse={loginF.loginFalse} setLoginF={setLoginF} ></Login>
             <ForgatP pNewEye={pNewEye} pNewRegEye={pNewRegEye} setPNewEye={setPNewEye} setNewPEye={setNewPEye} confirmRef={confirmRef} forgatPassword={forgatPassword} confirm={confirm} conf={confirmOpen.conf} okClick={okClick} newPassword={newPassword.newP} setConfirmOpen={setConfirmOpen} confirmClick={confirmClick} forgatOpen={forgatOpen.forgatO} handleChange={handleChange} formValuesP = {formValues.password} formValuesPR = {formValues.resetPassword} newPasswordErrorsP={newPasswordErrors.password} newPasswordErrorsR = {newPasswordErrors.resetPassword}></ForgatP>
-            <Register  passwordEye={passwordEye} setPasswordEye={setPasswordEye} passwordRegEye={passwordRegEye} setPasswordRegEye={setPasswordRegEye} registerClick={registerClick} open={open.openTwo}  registerCloseClick={registerCloseClick} snakeBar={snakeBar} eror={eror} registerChange={registerChange} formRegisterValuesN = {formRegisterValues.fullName} formRegisterValuesE = {formRegisterValues.email} formRegisterValuesPN = {formRegisterValues.phoneNumber} formRegisterValuesB = {formRegisterValues.birthDate} formRegisterValuesP = {formRegisterValues.password} formRegisterValuesRP = {formRegisterValues.resetPassword} registerErrorsN = {registerErrors.fullName} registerErrorsE = {registerErrors.email} registerErrorsPN = {registerErrors.phoneNumber} registerErrorsB = {registerErrors.birthDate} registerErrorsP = {registerErrors.password} registerErrorsRP = {registerErrors.resetPassword}></Register>
+            <Register setSnakeBar={setSnakeBar} loader={loader}  passwordEye={passwordEye} setPasswordEye={setPasswordEye} passwordRegEye={passwordRegEye} setPasswordRegEye={setPasswordRegEye} registerClick={registerClick} open={open.openTwo}  registerCloseClick={registerCloseClick} snakeBar={snakeBar} eror={eror} registerChange={registerChange} formRegisterValuesN = {formRegisterValues.fullName} formRegisterValuesE = {formRegisterValues.email} formRegisterValuesPN = {formRegisterValues.phoneNumber} formRegisterValuesB = {formRegisterValues.birthDate} formRegisterValuesP = {formRegisterValues.password} formRegisterValuesRP = {formRegisterValues.resetPassword} registerErrorsN = {registerErrors.fullName} registerErrorsE = {registerErrors.email} registerErrorsPN = {registerErrors.phoneNumber} registerErrorsB = {registerErrors.birthDate} registerErrorsP = {registerErrors.password} registerErrorsRP = {registerErrors.resetPassword}></Register>
         </div>
     )
 }

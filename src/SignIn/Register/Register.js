@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import "./register.scss"
 import {FcGoogle} from "react-icons/fc"
 import {AiOutlineCheckCircle, AiOutlineUserAdd} from "react-icons/ai"
@@ -6,8 +6,8 @@ import {VscEyeClosed, VscEye} from "react-icons/vsc"
 import {MdOutlineAlternateEmail, MdOutlineLock} from "react-icons/md"
 import {BsTelephone} from "react-icons/bs"
 
-export default function Register({registerChange, valid, passwordChange, registerClick, open, registerCloseClick, snakeBar, eror, passwordEye, setPasswordEye, passwordRegEye, setPasswordRegEye, formRegisterValuesN, formRegisterValuesE, formRegisterValuesPN, formRegisterValuesB, formRegisterValuesP, formRegisterValuesRP, registerErrorsN, registerErrorsE, registerErrorsPN, registerErrorsB, registerErrorsP, registerErrorsRP}){
-    
+export default function Register({setSnakeBar, loader, registerChange, registerClick, open, registerCloseClick, snakeBar, eror, passwordEye, setPasswordEye, passwordRegEye, setPasswordRegEye, formRegisterValuesN, formRegisterValuesE, formRegisterValuesPN, formRegisterValuesB, formRegisterValuesP, formRegisterValuesRP, registerErrorsN, registerErrorsE, registerErrorsPN, registerErrorsB, registerErrorsP, registerErrorsRP}){
+   
 
     return(
         <div>
@@ -74,10 +74,11 @@ export default function Register({registerChange, valid, passwordChange, registe
                 <a href="#" className="back" onClick={registerCloseClick}>Back to Log In</a>
             </form>
         </div>
-        {snakeBar && <div className="snakeBar">
-            <AiOutlineCheckCircle></AiOutlineCheckCircle>
-            <span>You have successfully registered</span>
-        </div>}
+        {loader ? <div class="custom-loader"></div>: null}
+        {snakeBar && <div className="snackBar"> 
+            <MdOutlineLock></MdOutlineLock>
+            <span>Create Account succesfuly!</span>
+            </div>}
         </div>}
         </div>
     )
