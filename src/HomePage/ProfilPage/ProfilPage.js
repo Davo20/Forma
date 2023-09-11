@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import userPic from "../Home/user.png"
 import {MdSchool, MdWork} from "react-icons/md"
+import "./profilPage.scss"
 
 export default function ProfilPage({info, setInfo, loginInfo, setLoginInfo}){
     const profilObj = {
@@ -27,10 +28,12 @@ export default function ProfilPage({info, setInfo, loginInfo, setLoginInfo}){
         }
     })
     return(
-        <section>
+        <section className="profilMain">
             <div>
                 <div>
-                    <img src={userPic}></img>
+                    <div className="profilPic">
+                        <img src={userPic}></img>
+                    </div>
                     <ul>
                         <li>{`Fullname: ${profilObj.fullName}`}</li>
                         <li>{`Age: ${userAge}`}</li>

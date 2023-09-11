@@ -66,7 +66,7 @@ export default function Home({info, setInfo, loginInfo, setLoginInfo}){
    
    
     return(
-        <section>
+        <section className="homePage">
             <div className="information">
                 <div className="backgr">
                 <div className="head">
