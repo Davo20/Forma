@@ -3,14 +3,24 @@ import './App.css';
 // import Form from './Components/Form/Form';
 // import Function from './Components/Funtion/Functions';
 import Function from './SignIn/Function/Function';
+import Profil from "./HomePage/Profil/Profil"
 import { useState } from 'react';
+import Site from './HomePage/Site/Site';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [trueEl, setTrueEl] = useState(false)
+  const localUser = localStorage.getItem("loginUser")
   return (
     <div className="App">
-      {/* <Function></Function> */}
-      <Function></Function>
+      {localUser ? <Site></Site> : <Function></Function>}
+      {/* <Profil></Profil> */}
+      {/* <Site></Site> */}
+      {/* <BrowserRouter>
+      <Routes>
+         <Route path='/' element={<Function></Function>}></Route>
+         {localUser && <Route path='/site' element={<Site></Site>}></Route>}
+      </Routes>
+      </BrowserRouter> */}
     </div>
   );
 }

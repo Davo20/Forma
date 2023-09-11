@@ -1,7 +1,9 @@
 import React from "react";
 import {BiExit} from "react-icons/bi"
 import {AiOutlineCheckCircle, AiOutlineCloseCircle} from "react-icons/ai"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Function from "../../Components/Funtion/Functions";
+import Site from "../../HomePage/Site/Site"
 
 export default function Login ({loginTrue, loginFalse, setLoginF, setLogin}){
     const localUser = localStorage.getItem("loginUser")
@@ -13,7 +15,7 @@ export default function Login ({loginTrue, loginFalse, setLoginF, setLogin}){
                     <BiExit onClick={()=>localStorage.removeItem("loginUser")} className="exit"></BiExit>
                 </div>
             </div> : null} */}
-            {/* {localUser ? <Function></Function> : null} */}
+            {/* {localUser ? <Site /> : null} */}
             {loginFalse && <div className="loginCheck">
                 <div className="falsee">
                     <AiOutlineCloseCircle className="close"></AiOutlineCloseCircle>

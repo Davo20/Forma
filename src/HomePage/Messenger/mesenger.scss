@@ -1,0 +1,27 @@
+.messenger{
+    width: 100%;
+    height: 100vh;
+    .chatMain{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .chatMenu{
+            width: 30%;
+            height: 90%;
+            background-color: red;
+        }
+        .chat{
+            width: calc(100% - 32%);
+            height: 90%;
+            background-color: blue;
+            .chatList{
+                width: 60%;
+                height: 80%;
+                margin: 0 auto;
+                background-color: green;
+            }
+        }
+    }
+}

@@ -23,7 +23,8 @@ export default function Function (){
         phoneNumber: "",
         birthDate: "",
         password: "", 
-        resetPassword: ""
+        resetPassword: "",
+        userName: ""
     }
     const [formRegisterValues, setRegisterForm] = useState(registerValue)
     const [registerErrors, setRegisterErrors] = useState({})
@@ -156,6 +157,7 @@ export default function Function (){
     const loginValidate = (values) =>{
         const errors = {}
 
+
         const obj = {
             logEmail: values.email,
             logPassword: values.password
@@ -176,9 +178,13 @@ export default function Function (){
             passwordRef.current.value = ""
             setUser(true)
         }
+        register.map((elem)=>{
+
             if(values.email === elem.email && values.password === elem.password){
+                obj.id = elem.id
                 localStorage.setItem("loginUser", JSON.stringify(obj))
             }
+        })
             
         })
         return errors
@@ -262,7 +268,7 @@ export default function Function (){
         return errors
     }
     return(
-        <div className="headForm">
+        <div className="headForm" id="headForm">
             <Form  passwordEye={passwordEye} setPasswordEye={setPasswordEye} loginRef = {loginRef} passwordRef = {passwordRef} erorLogin = {erorLogin} loginClick={loginClick} openClick={registerOpenClick} forgatPasswordOpen={forgatPasswordOpen} log={log} loginChange={loginChange} loginFormValueE={loginFormValue.email} loginFormValueP = {loginFormValue.password} loginFormErrorE={loginFormError.email} loginFormErrorP = {loginFormError.password} loginFormErrorEr = {loginFormError.errorInput}></Form>
             <Login  loginFalse={loginF.loginFalse} setLoginF={setLoginF} ></Login>
             <ForgatP pNewEye={pNewEye} pNewRegEye={pNewRegEye} setPNewEye={setPNewEye} setNewPEye={setNewPEye} confirmRef={confirmRef} forgatPassword={forgatPassword} confirm={confirm} conf={confirmOpen.conf} okClick={okClick} newPassword={newPassword.newP} setConfirmOpen={setConfirmOpen} confirmClick={confirmClick} forgatOpen={forgatOpen.forgatO} handleChange={handleChange} formValuesP = {formValues.password} formValuesPR = {formValues.resetPassword} newPasswordErrorsP={newPasswordErrors.password} newPasswordErrorsR = {newPasswordErrors.resetPassword}></ForgatP>

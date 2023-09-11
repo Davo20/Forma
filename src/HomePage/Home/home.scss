@@ -1,0 +1,32 @@
+.information{
+    width: 100%;
+    height: 300px;
+    .backgr{
+        background-color: rgb(88, 84, 84);
+        width: 100%;
+        height: 180px;
+        display: flex;
+        justify-content: center;
+    }
+    .head{
+        width: 90%;
+        height:300px;
+        .profileImg{
+            width: 200px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            img{
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+    
+}
+section{
+    width: calc(100% - 60px);
+}

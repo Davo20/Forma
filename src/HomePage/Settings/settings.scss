@@ -1,0 +1,183 @@
+.settingsSection{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    background-color: #D8DCE0;
+    .settingsMain{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        .accSec{
+            // width: 70%;
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px 0;
+            .formFlex{
+                // width: 100%;
+                display: flex;
+                justify-content: space-around;
+                div{
+                    input{
+                        display: block;
+                        width: 100%;
+                        height: 30px;
+                        border: 1px solid black;
+                        outline: none;
+                        margin: 5px 0;
+                    }
+                    select{
+                        width: 100%;
+                        height: 30px;
+                        margin: 5px 0
+                    }
+                    label{
+                        color: #6c6c6c;
+                    }
+                }
+            }
+            button{
+                background-color: #357EC7;
+                width: 150px;
+                height: 30px;
+                border: none;
+                outline: none;
+                margin-top: 10px;
+            }
+        }
+        .accSecNight{
+            background-color: #090E14;
+            h2{
+                color: white;
+            }
+        }
+        .selectSetting{
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // width: 20%;
+            // height: 300px; 
+            border-radius: 5px;
+            background-color: white;
+            ul{
+                width: 90%;
+                li{
+                    display: flex;
+                    color: #6c6c6c;
+                    .theme{
+                        display: block;
+                        div{
+                            width: 60px;
+                            height: 30px;
+                            border-radius: 20px;
+                            background-color: black;
+                            position: relative;
+                            div{
+                                position: absolute;
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 20px;
+                                background-color: white;
+                            }
+                            .dark{
+                                position: absolute;
+                                right: 7.5px;
+                                top: 7px;
+                            }
+                            .sun{
+                                position: absolute;
+                                left: 7.5px;
+                                top: 7px;
+                                color: yellow;
+                            }
+                        }
+                    }
+                    .themeN{
+                        div{
+                            div{
+                                background-color: rgb(0, 199, 0);
+                                right: 0;
+                            }
+                            .dark{
+                                color: black;
+                            }
+                            .sun{
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .night{
+            background-color: #090E14;
+        }
+    }
+}
+.night{
+    background-color: black;
+    button{
+        color: white;
+    }
+}
+@media only screen and (min-width: 550px){
+    .accSec{
+        width: 70%;
+        .formFlex{
+            width: 100%;
+            div{
+                width: 40%;
+            }
+        }
+    }
+    .selectSetting{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        height: 300px; 
+        border-radius: 5px;
+        background-color: white;
+    }
+}
+@media only screen and (max-width: 550px){
+    .settingsMain{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items:flex-start;
+        flex-direction: column;
+        .accSec{
+            width: 100%;
+            border-radius: 5px;
+            background-color: white;
+            padding: 20px 0;
+            .formFlex{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                div{
+                    width: 80%;
+                }
+            }
+        }
+        .selectSetting{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 60px; 
+            border-radius: 5px;
+            background-color: white;
+            flex-direction: row;
+            ul{
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}
