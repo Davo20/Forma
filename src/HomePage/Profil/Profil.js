@@ -9,13 +9,10 @@ import { Outlet, Link } from "react-router-dom";
 import "./profil.scss"
 import ProfilPage from "../Home/Home";
 
-export default function Profil(){
+export default function Profil({searchOpen, setSearchOpen}){
     const [sideBar, setSideBar] = useState(false)
     const [more, setMore] = useState(false)
-
-    // const arrowClick = ()=>{
-    //     set
-    // }
+    
     return(
     <div>
                 <div id ="page" className="page">
@@ -46,7 +43,7 @@ export default function Profil(){
                                 </li>
                                 <li>
                                     <div>
-                                        <TbUserSearch></TbUserSearch>
+                                        {!searchOpen ? <TbUserSearch onClick={()=>setSearchOpen(true)}></TbUserSearch> : <TbUserSearch className="searchActive" onClick={()=>setSearchOpen(false)}></TbUserSearch>}
                                     </div>
                                     <div>
                                         {sideBar && <span>Search</span>}
@@ -115,7 +112,7 @@ export default function Profil(){
                                 {more && <div>
                                     <ul>
                                         <li>
-                                            <TbUserSearch></TbUserSearch>
+                                        {!searchOpen ? <TbUserSearch onClick={()=>setSearchOpen(true)}></TbUserSearch> : <TbUserSearch className="searchActive" onClick={()=>setSearchOpen(false)}></TbUserSearch>}
                                         </li>
                                         <li>
                                             <a href="settings">
