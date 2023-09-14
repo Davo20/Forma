@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react";
 import user from "./user.png"
 import "./home.scss";
+import axios from "axios"
 
 export default function Home({info, setInfo, loginInfo, setLoginInfo}){
     // const [info, setInfo] = useState(JSON.parse(localStorage.getItem("user")))
     // const [loginInfo, setLoginInfo] = useState(JSON.parse(localStorage.getItem("loginUser")))
-    const [image, setImage] = useState()
+    const [file, setFile] = useState()
     const [images, setImages] = useState()
     const obj = {
         userName: "",
@@ -24,7 +25,7 @@ export default function Home({info, setInfo, loginInfo, setLoginInfo}){
 
     const fileChange = (e)=>{
         // console.log(e.target.files[0])
-        setImage(e.target.files)
+        setFile(e.target.files[0])
        
         // const newLocal = []
         // info.map((elem)=>{
@@ -51,16 +52,14 @@ export default function Home({info, setInfo, loginInfo, setLoginInfo}){
     const imageClick = (e) =>{
         e.preventDefault()
         const formData = new FormData()
-        formData.append("image", image)
-        const objj ={
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: formData
-        }
-        fetch("http://localhost:3000/", objj)
-        .then((response) => response.json())
-        .then((result)=>setImages(result))
-        .catch((error)=>{console.log(error)})
+        formData.append("file", file)
+        // const objj ={
+        //     method: "POST",
+        //     body: formData
+        // }
+        axios.post("http://localhost:3000/home", formData)
+        .then(res => {})
+        .catch(er => console.log(er))
         // console.log(formData)
     }
    
@@ -88,8 +87,8 @@ export default function Home({info, setInfo, loginInfo, setLoginInfo}){
                 </div>
             </div>
            
-                <input type="file" onChange={fileChange} accept="image/*, .png, .jpg, .gif, .web"></input>
-                <button type="submit" onClick={imageClick}>Upload</button>
+                <input type="file" onChange={fileChange}></input>
+                <button type="button" onClick={imageClick}>Upload</button>
            
         </section>
     )

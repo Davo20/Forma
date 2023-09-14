@@ -21,11 +21,12 @@ export default function Site(){
 <Profil searchOpen={searchOpen} setSearchOpen={setSearchOpen}></Profil>
             <BrowserRouter>
                 <Routes>
-                    <Route path="home" element={<Home info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Home>}></Route>
-                    <Route path='profil' element={<ProfilPage info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></ProfilPage>}></Route>
+                    <Route path="/" element={<Home info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Home>}></Route>
+                    <Route path="/home" element={<Home info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Home>}></Route>
+                    <Route path='/profil' element={<ProfilPage info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></ProfilPage>}></Route>
                     {/* <Route path="search" element={<Search info={info}></Search>}></Route> */}
-                    <Route path="settings" element={<Settings info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Settings>}></Route>
-                    <Route path="messenger" element={<Messenger info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Messenger>}></Route>
+                    <Route path="/settings" element={<Settings info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Settings>}></Route>
+                    <Route path="/messenger" element={<Messenger info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Messenger>}></Route>
                 </Routes>
             </BrowserRouter>
                     <Search info={info} searchOpen={searchOpen} setSearchOpen={setSearchOpen}></Search>
