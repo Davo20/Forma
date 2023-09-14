@@ -21,7 +21,7 @@ export default function Site(){
 <Profil searchOpen={searchOpen} setSearchOpen={setSearchOpen}></Profil>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Home>}></Route>
+                    <Route path="/" element={<Settings info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Settings>}></Route>
                     <Route path="/home" element={<Home info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></Home>}></Route>
                     <Route path='/profil' element={<ProfilPage info={info} setInfo={setInfo} loginInfo={loginInfo} setLoginInfo={setLoginInfo}></ProfilPage>}></Route>
                     {/* <Route path="search" element={<Search info={info}></Search>}></Route> */}
