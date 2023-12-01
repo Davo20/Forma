@@ -1,8 +1,10 @@
 .page{
     display: flex;
-    position: static;
+    position: fixed;
+    left: 0;
     nav{
-        position: relative;
+        // position: relative;
+        display: none;
         width: 60px;
         height: 100vh;
         background-color: #090E14;
@@ -62,8 +64,13 @@
         ul{
             display: flex;
             width: 80%;
-            align-items: start;
+            align-items: flex-start;
         }
+    }
+}
+@media only screen and (min-width: 550px){
+    .mobileNavBar{
+        display: none;
     }
 }
 @media only screen and (max-width: 550px){
@@ -74,7 +81,7 @@
         display: none;
    }
    .mobileNavBar{
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     width: 95%;
     z-index: 2;

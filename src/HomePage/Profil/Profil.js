@@ -5,7 +5,7 @@ import {MdClose, MdMenu, MdOutlineHome, MdSettings, MdOutlineKeyboardDoubleArrow
 import {TbUserSearch} from "react-icons/tb"
 import {RiHomeLine} from "react-icons/ri"
 import {AiOutlineUser} from "react-icons/ai"
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./profil.scss"
 import ProfilPage from "../Home/Home";
 
@@ -32,8 +32,9 @@ export default function Profil({searchOpen, setSearchOpen}){
                             </div>
                             <div>
                                 <li>
+                                    
                                     <div>
-                                        <a href="home">
+                                        <a href="/home">
                                             <MdOutlineHome></MdOutlineHome>
                                         </a>
                                     </div>

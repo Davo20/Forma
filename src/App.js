@@ -7,12 +7,14 @@ import Profil from "./HomePage/Profil/Profil"
 import { useState } from 'react';
 import Site from './HomePage/Site/Site';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Slider from "./Slider/Slider"
 
 function App() {
   const localUser = localStorage.getItem("loginUser")
   return (
     <div className="App">
       {localUser ? <Site></Site> : <Function></Function>}
+      {/* <Slider></Slider> */}
       {/* <Profil></Profil> */}
       {/* <Site></Site> */}
       {/* <BrowserRouter>

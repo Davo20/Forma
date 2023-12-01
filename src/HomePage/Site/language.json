@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "langSearch": "Search",
+        "langProfilName": "Profil",
+        "langHomeName": "Home",
+        "langMessengerName": "Messenger",
+        "langExitName": "Exit",
+        "langSettingsName": "Settings",
+        "langAccountName": "Account",
+        "langPasswordName": "Password",
+        "langThemeName": "Theme",
+        "langAccountSettings": "Account Settings",
+        "langGullname": "Fullname",
+        "langAddres": "Addres",
+        "langUsername": "Username",
+        "langLocation": "Location",
+        "langEmail": "Email",
+        "langPhone": "Phone",
+        "langSave": "Save",
+        "langNewPassword": "New Password",
+        "langResetPassword": "Reset Password"
+
+    },
+    {
+        "langSearch": "Որոնել",
+        "langProfilName": "Պրոֆիլ",
+        "langHomeName": "Գլխավոր",
+        "langMessengerName": "Հաղորդագրություն",
+        "langExitName": "Ելք",
+        "langSettingsName": "Կարգավորումներ",
+        "langAccountName": "Էջ",
+        "langPasswordName": "Գաղտնաբառ",
+        "langThemeName": "Ֆոն",
+        "langAccountSettings": "Էջի կարգավորումներ",
+        "langGullname": "Անուն, Ազգանուն",
+        "langAddres": "Երկիր",
+        "langUsername": "Մականուն",
+        "langLocation": "Հասցե",
+        "langEmail": "Էլ․ Հասցե",
+        "langPhone": "Հեռախոսահամար",
+        "langSave": "Պահպանել",
+        "langNewPassword": "Նոր Գաղտնաբառ",
+        "langResetPassword": "Կրկնել Գաղտնաբառը"
+        
+    }
+]

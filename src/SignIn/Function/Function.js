@@ -4,6 +4,7 @@ import Login from "../Login/Login";
 import ForgatP from "../ForgatP/ForgatP";
 import Register from "../Register/Register";
 import "./function.scss"
+import usImg from "./img/user.webp"
 
 
 if(!localStorage.getItem("id")){
@@ -84,7 +85,8 @@ export default function Function (){
             phoneNumber: values.phoneNumber,
             birthDate: values.birthDate,
             password: values.password,
-            resetPassword: values.resetPassword
+            resetPassword: values.resetPassword,
+            // image: usImg
         }]
 
         
